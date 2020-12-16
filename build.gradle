@@ -9,6 +9,23 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'launch4j'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'edu.sc.seis.gradle:launch4j:1.0.6'
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
+launch4j {
+    mainClassName = 'SwingDemo'
+    outfile = "file.exe"
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
